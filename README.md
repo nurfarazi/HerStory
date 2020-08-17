@@ -80,6 +80,11 @@
 ### Database create 
 
  - Create a database called `her_story`
+ - Follow this sequence to populate database 
+    1. populate `ProductType`
+    2. populate `Product`
+    3. populate `Coupon`
+    4. populate `Order`  
   
 ### Database update
 
