@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom box-shadow">
+  <a class="navbar-brand" routerLink="/">Her Story</a>
+
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/shop">Shop<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/basket">Basket
+          <span *ngIf="(basket$ | async)" class="badge badge-danger">{{(basket$ | async).items.length}}</span>
+        </a>
+      </li>
+
+      <ng-container *ngIf="(currentUser$ | async) == null">
+        <a routerLink="/account/register" class="m-1 btn btn-outline-dark">Sign up</a>
+        <a routerLink="/account/login" class="m-1 btn btn-outline-dark">Login</a>
+      </ng-container>
+
+      <ng-container *ngIf="currentUser$ | async">
+        <a (click)="logout()" class="m-1 btn btn-outline-dark">Log out</a>
+      </ng-container>
+    </ul>
+  </div>
+</nav>
