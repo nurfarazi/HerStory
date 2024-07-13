@@ -7,3 +7,5 @@ settings.json
 publish
 wwwroot
 .idea
+config.bat
+node_modules
